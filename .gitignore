@@ -23,6 +23,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
 =======
 lerna-debug.log*
 
@@ -158,3 +159,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 >>>>>>> 02ba81dca81817a9a210c1f13713800a19699112
+=======
+.env
+>>>>>>> 3d3b2d0d1097a24ed2ec178643d257cae734b14b

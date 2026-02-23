@@ -7,12 +7,12 @@ const highlights = [
         description: "hi",
     },
     {
-        icon: Rocket,
+        icon: Code2,
         title: "with another title",
         description: "ill prob change this icon",
     },
     {
-        icon: Users,
+        icon: Code2,
         title: "and this one too",
         description: "maybe this one too",
     },
