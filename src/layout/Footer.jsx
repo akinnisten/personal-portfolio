@@ -1,8 +1,8 @@
 import { LucideLinkedin, LucideGithub } from "lucide-react";
 
 const socialLinks = [
-    { icon: LucideGithub, href:"#", label: "GitHub"},
-    { icon: LucideLinkedin, href:"#", label: "LinkedIn"},
+    { icon: LucideGithub, href:"https://github.com/akinnisten", label: "GitHub"},
+    { icon: LucideLinkedin, href:"https://www.linkedin.com/in/aidan-kinnisten-773022385/", label: "LinkedIn"},
 ]
 
 const footerLinks = [

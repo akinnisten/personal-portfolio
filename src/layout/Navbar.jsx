@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const navLinks = [
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
+    { href: "#", label: "Experience (WIP)" },
 ];
 
 export const Navbar = () => {
@@ -28,7 +29,7 @@ export const Navbar = () => {
                 isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
             } z-50`}
         >
-            <nav className="container mx-auto px-6 flex items-center justify-between">
+            <nav className="container mx-auto px-6 flex items-center justify-between max-w-5xl">
                 <a 
                     href="#" 
                     className="text-xl font-bold tracking-tight hover:text-primary"
@@ -38,7 +39,7 @@ export const Navbar = () => {
 
                 { /* Desktop Nav */ }
                 <div className="hidden md:flex items-center gap-1">
-                    <div className="glass rounded-full px-2 py-1 flex items-center gap-1"> 
+                    <div className="glass rounded-full px-3 py-1 flex items-center gap-1"> 
                     {navLinks.map((link, index) => (
                         <a 
                         href={link.href} 
@@ -52,9 +53,9 @@ export const Navbar = () => {
                 </div>
                 
                 { /* CTA BUTTON */}
-                <div className="hidden md:block">
+                <div className="hidden md:flex items-center gap-3">
                     <div onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior : 'smooth'})}>
-                    <Button size="sm">Contact Me</Button>
+                    <Button size="sm" className="cursor-pointer">Contact Me</Button>
                     </div>
                 </div>
 
@@ -69,7 +70,7 @@ export const Navbar = () => {
 
             { /* Mobile Menu */ }
             {isMobileMenuOpen && (
-                <div className="md:hidden glass glass-strong animate-fade-in">
+                <div className="md:hidden glass bg-background/40 animate-fade-in">
                     <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
                         {navLinks.map((link, index) => (
                             <a 
@@ -81,7 +82,10 @@ export const Navbar = () => {
                                 {link.label}
                             </a>
                         ))}
-                        <Button onClick={() => setIsMobileMenuOpen(false)}
+                        <Button onClick ={() => {
+                            setIsMobileMenuOpen(false);
+                            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
                             >Contact Me
                         </Button>
                     </div>

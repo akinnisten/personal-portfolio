@@ -1,5 +1,6 @@
 import { LucideGithub, ArrowUpRight } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { ScrollReveal } from "../components/ScrollReveal";
 
 const projects = [
 
@@ -36,26 +37,51 @@ const projects = [
 export const Projects = () => {
     return (
         <section id="projects" className="py-32 relative overflow-hidden">
+            { /* Purple Dots Dots */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                {[...Array(30)].map((_, i) => (
+                    <div 
+                        className="absolute w-1.5 h-1.5 rounded-full opacity-60" 
+                        style={{
+                            backgroundColor: "#DDB8FF",
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            animation: `slow-drift ${
+                                15 + Math.random() * 20
+                            }s ease-in-out infinite`,
+                            animationDelay: `${Math.random() * 5}s`
+                        }}
+                    />
+                ))}
+            </div>
+
             {/* bg glows */}
             <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"/>
             <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl"/>
             <div className="container mx-auto px-6 relative z=10"> 
                 <div className="text-center mx-auto max-w-3xl mb-16">
+                    <ScrollReveal>
                     <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
                         Featured Work
                         </span>
+                    </ScrollReveal>
                     <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-foreground">
+                        <ScrollReveal>
                         Projects that
                         <span className="font-serif italic font-normal text-white"> 
                             { " " } make an impact.</span>
+                        </ScrollReveal>
                     </h2>
+                    <ScrollReveal>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
                         A selection of recent work.
                     </p>
+                    </ScrollReveal>
                 </div>
                 {/* Projects Grid */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {projects.map((project, idx) => (
+                        <ScrollReveal className="duration-1500">
                         <div 
                             key={idx} 
                             className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
@@ -108,8 +134,10 @@ export const Projects = () => {
                                 </div>
                             </div>
                         </div>
+                        </ScrollReveal>
                     ))}
                 </div>
+                
 
                 { /* view all projects */ }
                 <div className="text-center mt-12 animate-fade-in animation-delay-500">

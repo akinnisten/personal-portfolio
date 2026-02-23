@@ -2,6 +2,7 @@ import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-reac
 import { Button } from "@/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { ScrollReveal } from "../components/ScrollReveal";
 
 const contactInfo = [
     {
@@ -77,6 +78,25 @@ export const Contact = () => {
     return (
 
         <section id="contact" className="py-32 relative overflow-hidden">
+
+            { /* Purple Dots Dots */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                {[...Array(30)].map((_, i) => (
+                    <div 
+                        className="absolute w-1.5 h-1.5 rounded-full opacity-60" 
+                        style={{
+                            backgroundColor: "#DDB8FF",
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            animation: `slow-drift ${
+                                15 + Math.random() * 20
+                            }s ease-in-out infinite`,
+                            animationDelay: `${Math.random() * 5}s`
+                        }}
+                    />
+                ))}
+            </div>
+
             <div className="absolute top-0 left-0 w-full h-full">
                 <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -85,22 +105,31 @@ export const Contact = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mx-auto max-w-3xl mb-16">
                     <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+                        <ScrollReveal>
                         Get in Touch
+                        </ScrollReveal>
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-foreground">
+                        <ScrollReveal>
                         Let's build
                         <span className="font-serif italic font-normal text-white">
                             {" "} something great.</span>
+                        </ScrollReveal>
                     </h2>
+                    <ScrollReveal>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
+                        
                         Text here. AND MAKE SURE THE EMAILJS WORKS
                     </p>
+                    </ScrollReveal>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <ScrollReveal>
                     <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
                         <form className="space-y-6" onSubmit={handleSubmit}>
                             <div>
+                                <ScrollReveal>
                                 <label
                                     htmlFor="name"
                                     className="block text-sm font-medium mb-2"
@@ -118,9 +147,11 @@ export const Contact = () => {
                                     }
                                     className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                                 />
+                                </ScrollReveal>
                             </div>
 
                             <div>
+                                <ScrollReveal>
                                 <label
                                     className="block text-sm font-medium mb-2"
                                 >
@@ -136,9 +167,11 @@ export const Contact = () => {
                                         setFormData({ ...formData, email: e.target.value })
                                     }
                                     className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                </ScrollReveal>
                             </div>
 
                             <div>
+                                <ScrollReveal>
                                 <label
                                     htmlFor="message"
                                     className="block text-sm font-medium mb-2"
@@ -154,8 +187,10 @@ export const Contact = () => {
                                         setFormData({ ...formData, message: e.target.value })
                                     }
                                     className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" />
+                                </ScrollReveal>
                             </div>
-                            <Button
+                            <ScrollReveal className="duration-2000">
+                                <Button
                                 className="w-full cursor-pointer"
                                 type="submit"
                                 size="lg"
@@ -169,7 +204,8 @@ export const Contact = () => {
                                         <Send className="w-5 h-5" />
                                     </>
                                 )}
-                            </Button>
+                                </Button>
+                            </ScrollReveal>
 
                             {submitStatus.type && (
                                 <div
@@ -189,10 +225,12 @@ export const Contact = () => {
                             )}
                         </form>
                     </div>
+                    </ScrollReveal>
 
                     {/* Contact Info */}
 
                     <div className="space-y-6 animate-fade-in animation-delay-400">
+                        <ScrollReveal>
                         <div className="glass rounded-3xl p-8">
                             <h3 className="text-xl font semibold mb-6">
                                 Contact Information
@@ -216,11 +254,12 @@ export const Contact = () => {
                                 ))}
                             </div>
                         </div>
-
+                        </ScrollReveal>
 
 
                         { /* Availability Card */}
                         <div className="glass rounded-3xl p-8 border border-primary/30">
+                            <ScrollReveal>
                             <div className="flex items-center gap-3 mb-4">
                                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                                 <span className="font-medium">Currently Available</span>
@@ -228,6 +267,7 @@ export const Contact = () => {
                             <p className="text-muted-foreground text-sm">
                                 Currently open to new opportunities! Whether it's related to machine learning, cyber security, software engineering, or any other technological inquiry, let's talk!
                             </p>
+                            </ScrollReveal>
                         </div>
                     </div>
                 </div>

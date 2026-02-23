@@ -30,10 +30,11 @@ export const Hero = () => {
 
         </div>
 
-        { /* Green Dots */}
+        { /* Purple Dots Dots */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[...Array(30)].map((_, i) => (
                 <div 
+                    key={i}
                     className="absolute w-1.5 h-1.5 rounded-full opacity-60" 
                     style={{
                         backgroundColor: "#DDB8FF",
@@ -144,11 +145,11 @@ export const Hero = () => {
                 </div>
             </div>
             {/* Skills Section */}
-            <div className="mt-20 animate-fade-in animation-delay-600">
+            <div className="mt-10 animate-fade-in animation-delay-600">
                 <div className="relative overflow-hidden">
                     <div className="flex animate-marquee">
                        {[...skills, ...skills].map((skill, idx) => (
-                            <div key={idx} className="flex-shrink-0 px-8 py-4">
+                            <div key={idx} className="flex-shrink-0 px-8 py-0">
                                 <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
                                     {skill}
                                 </span>
@@ -159,7 +160,7 @@ export const Hero = () => {
             </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
             <a
                 href="#about"
                 className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
