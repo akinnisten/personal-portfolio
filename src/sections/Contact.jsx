@@ -8,19 +8,16 @@ const contactInfo = [
         icon: Mail,
         label: "Email",
         value: "aidankinnisten@icloud.com",
-        href: "aidankinnisten",
     },
     {
         icon: Phone,
         label: "Phone",
-        value: "64298743",
-        href: "tel: 24876284",
+        value: "781-217-1386",
     },
     {
         icon: MapPin,
         label: "Location",
         value: "Columbus, OH",
-        href: "#",
     },
 ];
 
@@ -96,7 +93,7 @@ export const Contact = () => {
                             {" "} something great.</span>
                     </h2>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
-                        Text here.
+                        Text here. AND MAKE SURE THE EMAILJS WORKS
                     </p>
                 </div>
 
@@ -114,7 +111,7 @@ export const Contact = () => {
                                     id="name"
                                     type="text"
                                     required
-                                    placeholder="Enter name..."
+                                    placeholder="Enter name... (or just type something lol)"
                                     value={formData.name}
                                     onChange={(e) =>
                                         setFormData({ ...formData, name: e.target.value })
@@ -159,7 +156,7 @@ export const Contact = () => {
                                     className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" />
                             </div>
                             <Button
-                                className="w-full"
+                                className="w-full cursor-pointer"
                                 type="submit"
                                 size="lg"
                                 disabled={isLoading}
@@ -204,7 +201,6 @@ export const Contact = () => {
                                 {contactInfo.map((item, i) => (
                                     <a
                                         key={i}
-                                        href={item.href}
                                         className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors"
                                     >
                                         <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -230,7 +226,7 @@ export const Contact = () => {
                                 <span className="font-medium">Currently Available</span>
                             </div>
                             <p className="text-muted-foreground text-sm">
-                                Currently open to new opportunities! Let's talk!
+                                Currently open to new opportunities! Whether it's related to machine learning, cyber security, software engineering, or any other technological inquiry, let's talk!
                             </p>
                         </div>
                     </div>

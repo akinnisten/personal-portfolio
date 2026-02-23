@@ -3,23 +3,23 @@ import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 const highlights = [
     {
         icon: Code2,
-        title: "Text1",
-        description: "Text",
+        title: "a title",
+        description: "hi",
     },
     {
         icon: Rocket,
-        title: "Text1",
-        description: "Text",
+        title: "with another title",
+        description: "ill prob change this icon",
     },
     {
         icon: Users,
-        title: "Text1",
-        description: "Text",
+        title: "and this one too",
+        description: "maybe this one too",
     },
     {
         icon: Lightbulb,
-        title: "Text1",
-        description: "Text",
+        title: "this one too",
+        description: "tuff",
     },
 ]
 
@@ -42,15 +42,15 @@ export const About = () => {
                         </h2>
                         <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
                             <p>
-                                Text Here
+                                yo i should prob add some text here
                             </p>
                             <p>
-                                Text Here
+                                
                             </p>
                         </div>
                         <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
                             <p className="text-lg font-medium italic text-foreground">
-                                "Mission statement"
+                                "mission statement type of box"
                             </p>
                         </div>
                     </div>

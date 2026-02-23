@@ -36,7 +36,7 @@ export const Hero = () => {
                 <div 
                     className="absolute w-1.5 h-1.5 rounded-full opacity-60" 
                     style={{
-                        backgroundColor: "#20B2A6",
+                        backgroundColor: "#DDB8FF",
                         left: `${Math.random() * 100}%`,
                         top: `${Math.random() * 100}%`,
                         animation: `slow-drift ${
@@ -62,12 +62,13 @@ export const Hero = () => {
                     { /* Headline */}
                     <div className="space-y-4">
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                            Developing <span className="text-primary glow-text">opportunities</span>
+                            <span className="text-primary glow-text"> Driven</span> 
+                            <br/> <span className="font-bold text-white">by the challenge</span>
                             <br />
-                            for new AI models with 
+                            of <span className="italic"> mastering </span> 
                             <br />
-                            <span className="font-serif italic font-normal text-white">
-                                precision.
+                            <span className="font-bold text-white">
+                                Machine Learning.
                             </span>
                         </h1>
                         <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">

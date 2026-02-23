@@ -4,29 +4,29 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
 
     {
-        title: "Project #1",
-        description: "Detailed Description for Project #1",
+        title: "test link API",
+        description: "test link API",
         image: "/background-cover.png",
         tags: ["React", "Java"],
         github: "#",
     },
     {
         title: "Project #2",
-        description: "Detailed Description for Project #1",
+        description: "Detailed Description for Project #2",
         image: "/background-cover.png",
-        tags: ["React", "Java"],
+        tags: ["React", "Java", "Test"],
         github: "#",
     },
     {
-        title: "Project #3",
-        description: "Detailed Description for Project #1",
+        title: "title - add break lines",
+        description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         image: "/background-cover.png",
         tags: ["React", "Java"],
         github: "#",
     },
     {
         title: "Project #4",
-        description: "Detailed Description for Project #1",
+        description: "Detailed Description for Project #4",
         image: "/background-cover.png",
         tags: ["React", "Java"],
         github: "#",
