@@ -5,22 +5,22 @@ const highlights = [
     {
         icon: Code2,
         title: "Full Stack Work",
-        description: "",
+        description: "Understanding the integration between front and back-end systems, building scable and responsive applications.",
     },
     {
         icon: MonitorCog,
         title: "Systems Programming",
-        description: "Having the fundamentals of ",
+        description: "Experienced with UNIX-based systems programming in C, utilizing debugging tools, and memory management.",
     },
     {
         icon: Users,
         title: "Collaboration",
-        description: "maybe this one",
+        description: "Demonstrate high work-ethic in team environments, knowing the fundamentals of GitHub, maintaining clean code.",
     },
     {
         icon: Lightbulb,
-        title: "Project-Driven Development",
-        description: "Striving to learn and grow, expanding projects beyond from what I'm capable",
+        title: "Self-Driven",
+        description: "Continuously expanding my skills and frameworks by building projects, and applying concepts beyond the classroom.",
     },
 ]
 
@@ -68,7 +68,13 @@ export const About = () => {
                         <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
                             <ScrollReveal>
                             <p>
-                                yo i should prob add some text here
+                                Driven computer science major with an interest in software engineering, 
+                                machine learning, and cyber security. I am actively looking for an internship either 
+                                in a remote setting or areas near Columbus, OH to apply my technical and 
+                                creative skills in order to gain valuable information regarding the tech industry. 
+                                I hope to create solutions to real-world problems, develop projects, and work with 
+                                experienced professionals to enhance my technical skills. I aim to bring enthusiasm 
+                                and adaptability to any team. 
                             </p>
                             <p>
                                 
@@ -78,7 +84,7 @@ export const About = () => {
                         <ScrollReveal>
                         <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
                             <p className="text-lg font-medium italic text-foreground">
-                                "mission statement type of box"
+                                "Providing ways to make the world an easier place while expanding my knowledge and skills" - Aidan Kinnisten
                             </p>
                         </div>
                         </ScrollReveal>

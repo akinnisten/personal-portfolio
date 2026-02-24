@@ -13,6 +13,11 @@ const skills = [
     "Github",
     "Flutter",
     "Firebase",
+    "Eclipse",
+    "IntelliJ",
+    "UNIX",
+    "Blender",
+    "VSCode",
 ];
 
 export const Hero = () => {
@@ -54,8 +59,8 @@ export const Hero = () => {
                 {/* Left Column - Text Content */}
                 <div className="space-y-8">
                     <div className="animate-fade-in">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary animate-pulse">
-                            <span className="w-2 h-2 bg-primary rounded-full" />
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+                            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                             Computer Science Student • Machine Learning 
                         </span>
                     </div>
@@ -73,7 +78,7 @@ export const Hero = () => {
                             </span>
                         </h1>
                         <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                            Hello, my name is Aidan Kinnisten. Some people call me Oliver, however you prefer. I'm a student at Furdue University.
+                            What's up, my name is Aidan Kinnisten, a current freshman studying Computer Science at Purdue University. I'm passionate about Machine Learning, and have been immersed in technology since the age of five. Thank you for visiting! { ":)"}
                         </p>
                     </div>
                     { /* CTAS */}
@@ -165,7 +170,7 @@ export const Hero = () => {
                 href="#about"
                 className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
             >
-                <span className="text-xs uppercase tracking-wider">Scroll</span>
+                <span className="text-xs uppercase tracking-wider"></span>
                 <ChevronDown className="w-6 h-6 animate-bounce" />
             </a>
         </div>
