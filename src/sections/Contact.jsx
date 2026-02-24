@@ -119,7 +119,7 @@ export const Contact = () => {
                     <ScrollReveal>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
                         
-                        I response fairly quickly, feel free to ask me any questions you may have!
+                        I respond fairly quickly, feel free to ask me any questions you may have!
                     </p>
                     </ScrollReveal>
                 </div>
