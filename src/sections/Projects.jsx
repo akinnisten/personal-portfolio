@@ -9,14 +9,14 @@ const projects = [
 
     {
         title: "Roblox Game - Bunny's Funeral",
-        description: "With over 70,000,000 plays, and YouTubers with over 10M+ subscribers playing.",
+        description: "With over 70,000,000 plays, and YouTubers with over 10M+ subscribers playing, designed a game with a team of seven on the platform 'Roblox'",
         image: "/bunny-funeral-cover.png",
         tags: ["Lua", "Blender", "Terrain/World Design", "Collaboration"],
         link: "https://www.roblox.com/games/5116739412/Bunnys-Funeral",
     },
     {
         title: "Schedule Generator App",
-        description: "Worked with a mentor at Purdue to make an application that generates a schedule",
+        description: "Worked with a mentor at Purdue to make an application that generates times that work within someone's schedule",
         image: "/calendar-app.png",
         tags: ["C++", "Ruby", "Flutter", "Firebase"],
         link: "https://github.com/akinnisten/Schedule-Generator",
@@ -30,7 +30,7 @@ const projects = [
     },
     {
         title: "Networking Project",
-        description: "Created a fictional company, NetLink, that incorporated topologies, documentation, ",
+        description: "Created a fictional company with a group of five, NetLink, that incorporated topologies, documentation, pricing",
         image: "/Picture1.png",
         objectFit: "contain",
         scale: "scale-60",
