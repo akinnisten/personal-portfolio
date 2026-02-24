@@ -68,6 +68,13 @@ export const About = () => {
                         <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
                             <ScrollReveal>
                             <p>
+                                Some of my technical skills and what I offer.
+                            </p>
+                            </ScrollReveal>
+                        </div>
+                        <ScrollReveal>
+                        <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
+                            <p className="text-lg font-medium italic text-foreground">
                                 Driven computer science major with an interest in software engineering, 
                                 machine learning, and cyber security. I am actively looking for an internship either 
                                 in a remote setting or areas near Columbus, OH to apply my technical and 
@@ -75,16 +82,6 @@ export const About = () => {
                                 I hope to create solutions to real-world problems, develop projects, and work with 
                                 experienced professionals to enhance my technical skills. I aim to bring enthusiasm 
                                 and adaptability to any team. 
-                            </p>
-                            <p>
-                                
-                            </p>
-                            </ScrollReveal>
-                        </div>
-                        <ScrollReveal>
-                        <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-                            <p className="text-lg font-medium italic text-foreground">
-                                "Providing ways to make the world an easier place while expanding my knowledge and skills" - Aidan Kinnisten
                             </p>
                         </div>
                         </ScrollReveal>

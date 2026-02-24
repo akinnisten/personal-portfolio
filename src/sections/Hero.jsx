@@ -78,7 +78,7 @@ export const Hero = () => {
                             </span>
                         </h1>
                         <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                            What's up, my name is Aidan Kinnisten, a current freshman studying Computer Science at Purdue University. I'm passionate about Machine Learning, and have been immersed in technology since the age of five. Thank you for visiting! { ":)"}
+                            Hello, my name is Aidan Kinnisten, a freshman studying Computer Science at Purdue University. I'm passionate about Machine Learning, and have been immersed in technology since the age of five. Thank you for visiting.
                         </p>
                     </div>
                     { /* CTAS */}
