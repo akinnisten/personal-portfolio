@@ -1,26 +1,26 @@
-import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
+import { Code2, Lightbulb, MonitorCog, Users } from "lucide-react";
 import { ScrollReveal } from "../components/ScrollReveal";
 
 const highlights = [
     {
         icon: Code2,
-        title: "a title",
-        description: "hi",
+        title: "Full Stack Work",
+        description: "",
     },
     {
-        icon: Rocket,
-        title: "with another title",
-        description: "ill prob change this icon",
+        icon: MonitorCog,
+        title: "Systems Programming",
+        description: "Having the fundamentals of ",
     },
     {
         icon: Users,
-        title: "and this one too",
+        title: "Collaboration",
         description: "maybe this one",
     },
     {
         icon: Lightbulb,
-        title: "this one too",
-        description: "Text",
+        title: "Project-Driven Development",
+        description: "Striving to learn and grow, expanding projects beyond from what I'm capable",
     },
 ]
 

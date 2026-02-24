@@ -1,36 +1,36 @@
-import { LucideGithub, ArrowUpRight } from "lucide-react";
+import { LucideGithub, ArrowUpRight, Fullscreen } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { ScrollReveal } from "../components/ScrollReveal";
 
 const projects = [
 
     {
-        title: "test link API",
-        description: "test link API",
-        image: "/background-cover.png",
-        tags: ["React", "Java"],
-        github: "#",
+        title: "Roblox Game - Bunny's Funeral",
+        description: "With over 70,000,000 plays, and YouTubers with over 10M+ subscribers playing.",
+        image: "/bunny-funeral-cover.png",
+        tags: ["Lua", "Blender", "Terrain/World Design", "Collaboration"],
+        link: "https://www.roblox.com/games/5116739412/Bunnys-Funeral",
     },
     {
-        title: "Project #2",
-        description: "Detailed Description for Project #2",
-        image: "/background-cover.png",
-        tags: ["React", "Java", "Test"],
-        github: "#",
+        title: "Schedule Generator App",
+        description: "Worked with a mentor at Purdue to make an application that generates a schedule",
+        image: "/calendar-app.png",
+        tags: ["C++", "Ruby", "Flutter", "Firebase"],
+        link: "https://github.com/akinnisten/Schedule-Generator",
     },
     {
-        title: "title - add break lines",
-        description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        image: "/background-cover.png",
-        tags: ["React", "Java"],
-        github: "#",
+        title: "My Portfolio Website",
+        description: "Created my own portfolio website that allows for people to learn more about myself and aspirations",
+        image: "/portfolio.png",
+        tags: ["Tailwind CSS", "Javascript", "VSCode"],
+        link: "https://github.com/akinnisten/personal-portfolio/tree/main",
     },
     {
-        title: "Project #4",
-        description: "Detailed Description for Project #4",
+        title: "Networking Project",
+        description: "Created a fictional companies that incorporated topologies, documentation",
         image: "/background-cover.png",
-        tags: ["React", "Java"],
-        github: "#",
+        tags: ["PuTTy", "Collaboration"],
+        link: "#",
     },
 ];
 
@@ -74,7 +74,7 @@ export const Projects = () => {
                     </h2>
                     <ScrollReveal>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
-                        A selection of recent work.
+                        A selection of recent and notable work.
                     </p>
                     </ScrollReveal>
                 </div>
@@ -100,10 +100,10 @@ export const Projects = () => {
                                 {/* overly */}
                                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <a 
-                                    href={project.github} 
+                                    href={project.link} 
                                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                                     >
-                                       <LucideGithub className="w-5 h-5" /> 
+                                       <Fullscreen className="w-5 h-5" /> 
                                     </a>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ export const Projects = () => {
                                         group-hover:-translate-y-1 transition-all"
                                     />
                                 </div>
-                                <p className="text-muted-foreground text-sm">
+                                <p className="text-muted-foreground text-sm break-words">
                                     {project.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2">

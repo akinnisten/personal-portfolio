@@ -54,8 +54,8 @@ export const Hero = () => {
                 {/* Left Column - Text Content */}
                 <div className="space-y-8">
                     <div className="animate-fade-in">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary animate-pulse">
+                            <span className="w-2 h-2 bg-primary rounded-full" />
                             Computer Science Student • Machine Learning 
                         </span>
                     </div>
