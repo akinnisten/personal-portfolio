@@ -109,6 +109,8 @@ export const Projects = () => {
                                         <a
                                             href={project.link}
                                             className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                                            target="_blank"
+                                            rel="nopener noreferrer"
                                         >
                                             <Fullscreen className="w-5 h-5" />
                                         </a>
