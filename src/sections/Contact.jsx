@@ -3,12 +3,14 @@ import { Button } from "@/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { useMemo } from "react";
 
 const contactInfo = [
     {
         icon: Mail,
         label: "Email",
-        value: "aidankinnisten@icloud.com",
+        value: "aidankinnisten@gmail.com",
+
     },
     {
         icon: MapPin,
@@ -70,26 +72,35 @@ export const Contact = () => {
         }
     };
 
+    const dots = useMemo(() => 
+        [...Array(30)].map((_, i) => ({
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            duration: `${15 + Math.random() * 20}s`,
+            delay: `${Math.random() * 5}s`,
+        })), 
+    []);
+
     return (
 
         <section id="contact" className="py-32 relative overflow-hidden">
             
             { /* Purple Dots Dots */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none ">
-                {[...Array(30)].map((_, i) => (
-                    <div 
-                        className="absolute w-1.5 h-1.5 rounded-full opacity-60" 
-                        style={{
-                            backgroundColor: "#DDB8FF",
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animation: `slow-drift ${
-                                15 + Math.random() * 20
-                            }s ease-in-out infinite`,
-                            animationDelay: `${Math.random() * 5}s`
-                        }}
-                    />
-                ))}
+                {dots.map((dot, i) => (
+            <div
+                key={i}
+                className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+                style={{
+                backgroundColor: "#DDB8FF",
+                left: dot.left,
+                top: dot.top,
+                animation: `slow-drift ${dot.duration} ease-in-out infinite`,
+                animationDelay: dot.delay,
+                }}
+            />
+            ))}
+
             </div>
 
             <div className="absolute top-0 left-0 w-full h-full">
@@ -226,8 +237,8 @@ export const Contact = () => {
 
                     <div className="space-y-6 animate-fade-in animation-delay-400">
                         <ScrollReveal>
-                        <div className="glass rounded-3xl p-8">
-                            <h3 className="text-xl font semibold mb-6">
+                        <div className="glass rounded-3xl p-5">
+                            <h3 className="text-xl font semibold mb-8">
                                 Contact Information
                             </h3>
                             <div className="space-y-4">
