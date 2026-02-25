@@ -9,28 +9,28 @@ const projects = [
 
     {
         title: "Roblox Game - Bunny's Funeral",
-        description: "With over 70,000,000 plays, and YouTubers with over 10M+ subscribers playing, designed a game with a team of seven on the platform 'Roblox'",
+        description: "With over 70,000,000 plays, and YouTubers with over 10M+ subscribers playing, designed a game with a team of seven on the platform 'Roblox'.",
         image: "/bunny-funeral-cover.png",
         tags: ["Lua", "Blender", "Terrain/World Design", "Collaboration"],
         link: "https://www.roblox.com/games/5116739412/Bunnys-Funeral",
     },
     {
         title: "Schedule Generator App",
-        description: "Worked with a mentor at Purdue to make an application that generates times that work within someone's schedule",
+        description: "Worked with a mentor at Purdue to make an application that generates times that work within someone's schedule.",
         image: "/calendar-app.png",
         tags: ["C++", "Ruby", "Flutter", "Firebase"],
         link: "https://github.com/akinnisten/Schedule-Generator",
     },
     {
         title: "My Portfolio Website",
-        description: "Created my own portfolio website that allows for people to learn more about myself and aspirations",
+        description: "Created my own portfolio website that allows for people to learn more about myself and aspirations, and having additional ways of contact.",
         image: "/portfolio.png",
         tags: ["Tailwind CSS", "Javascript", "VSCode"],
         link: "https://github.com/akinnisten/personal-portfolio/tree/main",
     },
     {
         title: "Networking Project",
-        description: "Created a fictional company with a group of five, NetLink, that incorporated topologies, documentation, pricing",
+        description: "Created a fictional company with a group of five, NetLink, that incorporated topologies, documentation, pricing.",
         image: "/Picture1.png",
         objectFit: "contain",
         scale: "scale-60",
@@ -147,10 +147,10 @@ export const Projects = () => {
 
 
                 <div className="text-center mt-12 animate-fade-in animation-delay-500">
-                    <div onClick={() => setShowModal(true)}>
+                    <div className="inline-block" onClick={() => setShowModal(true)}>
                         <AnimatedBorderButton>
                             View All Projects
-                            <ArrowUpRight className="w-5 h-5" />
+                            <ArrowUpRight className="w-3 h-5" />
                         </AnimatedBorderButton>
                     </div>
                 </div>

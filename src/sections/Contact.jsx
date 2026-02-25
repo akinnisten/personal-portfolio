@@ -11,11 +11,6 @@ const contactInfo = [
         value: "aidankinnisten@icloud.com",
     },
     {
-        icon: Phone,
-        label: "Phone",
-        value: "781-217-1386",
-    },
-    {
         icon: MapPin,
         label: "Location",
         value: "Columbus, OH",
