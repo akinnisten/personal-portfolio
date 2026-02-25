@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 const projects = [
 
     {
-        title: "Roblox Game - Bunny's Funeral",
+        title: "Roblox Game",
         description: "With over 70,000,000 plays, and YouTubers with over 10M+ subscribers playing, designed a game with a team of seven on the platform 'Roblox'.",
         image: "/bunny-funeral-cover.png",
         tags: ["Lua", "Blender", "Terrain/World Design", "Collaboration"],

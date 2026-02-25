@@ -78,7 +78,7 @@ export const Hero = () => {
                             </span>
                         </h1>
                         <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                            Hello, my name is Aidan Kinnisten, a freshman studying Computer Science at Purdue University. I'm passionate about Machine Learning, and have been immersed in technology since the age of five. Thank you for visiting.
+                            Hello, my name is Aidan Kinnisten, a freshman studying Computer Science at Purdue University. I'm passionate about Machine Learning, and have been immersed in technology since the age of five.
                         </p>
                     </div>
                     { /* CTAS */}
@@ -88,7 +88,7 @@ export const Hero = () => {
                             Contact Me <ArrowRight className="w-5 h-5" /> 
                         </Button>
                         </div>
-                        <a href="/resume.pdf" download>
+                        <a href="/aidan_kinnisten_resume.pdf" download>
                         <AnimatedBorderButton> 
                             Download Resume
                             <Download className="w-5 h-5"/>
