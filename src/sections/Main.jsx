@@ -20,7 +20,7 @@ const skills = [
     "VSCode",
 ];
 
-export const Hero = () => {
+export const Main = () => {
     return (
 
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -28,7 +28,7 @@ export const Hero = () => {
         <div className="absolute inset-0">
             <img 
                 src="background-cover.png" 
-                alt="Hero Image" 
+                alt="Main Image" 
                 className="w-full h-full object-cover opacity-40"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
@@ -57,38 +57,37 @@ export const Hero = () => {
         <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Text Content */}
-                <div className="space-y-8">
-                    <div className="animate-fade-in">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                            Computer Science Student • Machine Learning 
-                        </span>
-                    </div>
+                <div className="space-y-8 items-center flex flex-col text-center">
+                    
 
                     { /* Headline */}
-                    <div className="space-y-4">
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                            <span className="text-primary glow-text"> Driven</span> 
-                            <br/> <span className="font-bold text-white">by the challenge</span>
-                            <br />
-                            of <span className="italic"> mastering </span> 
-                            <br />
-                            <span className="font-bold text-white">
-                                Machine Learning.
-                            </span>
-                        </h1>
-                        <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                            Hello, my name is Aidan Kinnisten, a freshman studying Computer Science at Purdue University. I'm passionate about Machine Learning, and have been immersed in technology since the age of five.
+                    <div className="gap-4 animate-fade-in">
+                        <div className="animate-fade-in animation-delay-1600 space-y-4">
+                                <p className="text-xl text-foreground leading-none">
+                                    Hello, I am
+                                </p>
+
+                                <h1 className="text-7xl md:text-6xl animate-fade-in animation-delay-2000 lg:text-7xl font-bold text-primary glow-text leading-[0.95] mb-4">
+                                    Aidan Kinnisten
+                                </h1>
+
+                                <h2 className="text-2xl md:text-3xl font-semibold animate-fade-in animation-delay-2400 text-foreground leading-none">
+                                    Computer Science Student
+                                </h2>
+
+                            </div>
+                        <p className="text-lg text-muted-foreground max-w-lg mx-auto animate-fade-in animation-delay-2800 mt-4">
+                            I'm currently a freshman at Purdue University. I'm passionate about Machine Learning, and have been immersed in technology since the age of five. Check out what I'm about below.
                         </p>
                     </div>
                     { /* CTAS */}
-                    <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+                    <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-3500">
                         <div onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior : 'smooth'})}>
                         <Button size="lg" className="cursor-pointer">
                             Contact Me <ArrowRight className="w-5 h-5" /> 
                         </Button>
                         </div>
-                        <a href="/aidan_kinnisten_resume.pdf" download>
+                        <a href="/aidan_kinnisten_website_resume.pdf" download>
                         <AnimatedBorderButton> 
                             Download Resume
                             <Download className="w-5 h-5"/>
@@ -97,7 +96,7 @@ export const Hero = () => {
                     </div>
 
                     { /* Social Links */ }
-                    <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                    <div className="flex items-center gap-4 animate-fade-in animation-delay-3500 justify-center">
                         <span className="text-sm text-muted-foreground"> Follow: </span>
                         {[
                             { icon: LucideLinkedin, href: "https://www.linkedin.com/in/aidan-kinnisten-773022385/" },
@@ -116,7 +115,7 @@ export const Hero = () => {
                     </div>
                 </div>
                 {/* Right Column - Profile Image */}
-                <div className="relative animate-fade-in animation-delay-300">
+                <div className="relative animate-fade-in animation-delay-3500">
                     { /*Profile Image */}
                     <div className="relative max-w-md mx-auto">
                         <div
@@ -129,7 +128,7 @@ export const Hero = () => {
                             <img 
                                 src="/akinn.jpg" 
                                 alt="Aidan Kinnisten" 
-                                className="w-full-aspect[4/5] object-cover rounded-2xl"
+                                className="w-full aspect-[4.4/5] object-cover rounded-2xl"
                             />
                             {/* Floating Badge */}
                             <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
@@ -150,7 +149,7 @@ export const Hero = () => {
                 </div>
             </div>
             {/* Skills Section */}
-            <div className="mt-10 animate-fade-in animation-delay-600">
+            <div className="mt-10 animate-fade-in animation-delay-3800">
                 <div className="relative overflow-hidden">
                     <div className="flex animate-marquee">
                        {[...skills, ...skills].map((skill, idx) => (
@@ -165,7 +164,7 @@ export const Hero = () => {
             </div>
         </div>
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-3800">
             <a
                 href="#about"
                 className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
@@ -178,3 +177,4 @@ export const Hero = () => {
  
     );
 };
+

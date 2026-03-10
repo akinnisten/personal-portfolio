@@ -1,16 +1,16 @@
 import { Button } from "@/components/Button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
-
-const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#", label: "Experience (WIP)" },
-];
 
 export const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [theme, setTheme] = useState("dark");
+
+    const toggleTheme = () => {
+        const isLight = document.documentElement.classList.toggle("light");
+        setTheme(isLight ? "light" : "dark");
+    };  
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,23 +37,26 @@ export const Navbar = () => {
                     AK<span className="text-primary">.</span>
                 </a>
 
+                
                 { /* Desktop Nav */ }
                 <div className="hidden md:flex items-center gap-1">
-                    <div className="glass rounded-full px-3 py-1 flex items-center gap-1"> 
-                    {navLinks.map((link, index) => (
-                        <a 
-                        href={link.href} 
-                        key={index} 
-                        className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
-                        >
-                            {link.label}
-                        </a>
-                    ))}
-                    </div>
+                    
                 </div>
                 
                 { /* CTA BUTTON */}
+                
                 <div className="hidden md:flex items-center gap-3">
+                    <button
+                        onClick={toggleTheme}
+                        className="glass rounded-full p-2 hover:text-primary transition-colors cursor-pointer"
+                        aria-label="Toggle Theme"
+                    >
+                        {theme === "light" ? <Sun size={18} /> : <Moon size={18} />}
+                    </button>
+                    <div className="px-3 py-1 flex items-center gap-1"> 
+                    
+                    </div>
+
                     <div onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior : 'smooth'})}>
                     <Button size="sm" className="cursor-pointer">Contact Me</Button>
                     </div>
@@ -72,16 +75,14 @@ export const Navbar = () => {
             {isMobileMenuOpen && (
                 <div className="md:hidden glass bg-background/40 animate-fade-in">
                     <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
-                        {navLinks.map((link, index) => (
-                            <a 
-                                href={link.href} 
-                                key={index} 
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-lg text-muted-foreground hover:text-foreground py-2"
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                        <button
+                            onClick={toggleTheme}
+                            className="glass rounded-xl p-3 flex items-center justify-center gap-2 cursor-pointer hover:text-primary transition-colors"
+                        >
+                            Toggle Theme
+                        </button>
+                        
+                        
                         <Button onClick ={() => {
                             setIsMobileMenuOpen(false);
                             document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

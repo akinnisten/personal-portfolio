@@ -109,7 +109,7 @@ export const Contact = () => {
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mx-auto max-w-3xl mb-16">
+                <div className="text-center mx-auto max-w-3xl mb-14">
                     <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
                         <ScrollReveal>
                         Get in Touch
@@ -118,7 +118,7 @@ export const Contact = () => {
                     <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-foreground">
                         <ScrollReveal>
                         Let's build
-                        <span className="font-serif italic font-normal text-white">
+                        <span className="font-serif italic font-normal text-foreground">
                             {" "} something great.</span>
                         </ScrollReveal>
                     </h2>

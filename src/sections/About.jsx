@@ -47,7 +47,7 @@ export const About = () => {
                 ))}
             </div>
 
-            <div className="container mx-auto px-6 relative z=10">
+            <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     { /* Left Column */}
                     <div className="space-y-8">
@@ -58,13 +58,11 @@ export const About = () => {
                             </span>
                             </ScrollReveal>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-                            <ScrollReveal>
-                            Building the future,
-                            <span className="font-serif italic font-normal text-white">
-                                { } one component at a time. </span>
-                            </ScrollReveal>
-                        </h2>
+                        <ScrollReveal>
+                        <h2 className="text-4xl font-bold mt-4">
+                            Computer Science @ Purdue
+                            </h2>
+                        </ScrollReveal>
                         <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
                             <ScrollReveal>
                             <p>

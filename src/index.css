@@ -39,6 +39,27 @@
     font-family: "Playfair Display", serif;
   }
 
+  html.light {
+    --color-background: #f7f5ff;
+    --color-foreground: #161321;
+
+    --color-card: #ffffff;
+
+    --color-primary: #7c3aed;
+    --color-primary-foreground: #ffffff;
+
+    --color-secondary: #ebe5ff;
+    --color-secondary-foreground: #6d28d9;
+
+    --color-muted: #f1edf9;
+    --color-muted-foreground: #6b7280;
+
+    --color-border: #ddd6fe;
+
+    --color-highlight: #d97706;
+    --color-surface: #ffffff;
+  }
+
 }
 
 @layer components {
@@ -160,6 +181,42 @@
     animation-delay: 800ms;
   }
 
+  .animation-delay-1600 {
+    animation-delay: 1600ms;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+
+  .animation-delay-2400 {
+    animation-delay: 2400ms;
+  }
+
+  .animation-delay-2800 {
+    animation-delay: 2800ms;
+  }
+
+  .animation-delay-3000 {
+    animation-delay: 3000ms;
+  }
+
+  .animation-delay-3200 {
+    animation-delay: 3200ms;
+  }
+
+  .animation-delay-3300 {
+    animation-delay: 3300ms;
+  }
+
+  .animation-delay-3500 {
+    animation-delay: 3500ms;
+  }
+
+   .animation-delay-3800 {
+    animation-delay: 3800ms;
+  }
+
   @keyframes animated-border {
     0% {
       stroke-dashoffset: 400;
@@ -178,4 +235,43 @@
     backdrop-filter: blur(16px);
     box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent)
   }
+
+  .loader-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-line {
+  position: absolute;
+  width: 120%;
+  height: 2px;
+  left: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary),
+    transparent
+  );
+  animation: sweepLine 1.5s ease-out forwards;
+}
+
+.loader-line:nth-child(1) { top: 20%; }
+.loader-line:nth-child(2) { top: 35%; }
+.loader-line:nth-child(3) { top: 50%; }
+.loader-line:nth-child(4) { top: 65%; }
+.loader-line:nth-child(5) { top: 80%; }
+.loader-line:nth-child(6) { top: 90%; }
+
+@keyframes sweepLine {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+}
 }
