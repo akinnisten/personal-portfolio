@@ -35,6 +35,7 @@ const projects = [
             "Created a fictional company with a group of five, NetLink, that incorporated topologies, documentation, pricing.",
         image: "/Picture1.png",
         objectFit: "contain",
+        imageHeight: "h-40",
         tags: ["PuTTy", "Collaboration", "TCP/IP Protocols", "VMWare"],
         link: "https://docs.google.com/document/d/1H8KvXB02C2DRoeBA4mo48ivQSoQQ25Om/preview",
     },
@@ -106,7 +107,7 @@ export const Projects = () => {
                 </div>
 
                 {/* Carousel */}
-                <div className="max-w-2xl mx-auto h-140">
+                <div className="max-w-2xl mx-auto">
                     <div className="flex items-center gap-4 md:gap-6">
                         {/* Left Arrow */}
                         <button
@@ -122,7 +123,7 @@ export const Projects = () => {
                             <ScrollReveal className="duration-1500">
                                 <div className="group glass rounded-2xl overflow-hidden animate-fade-in">
                                     {/* Image */}
-                                    <div className="relative overflow-hidden h-64 bg-surface">
+                                    <div className={'relative overflow-hidden ${project.imageHeight || "h-64"} bg-surface'}>
                                         <img
                                             src={project.image}
                                             alt={project.title}
@@ -202,7 +203,7 @@ export const Projects = () => {
                     </div>
                 </div>
 
-                <div className="text-center animate-fade-in animation-delay-500">
+                <div className="text-center animate-fade-in animation-delay-500 mt-10">
                     <div className="inline-block" onClick={() => setShowModal(true)}>
                         <AnimatedBorderButton>
                             View All Projects
