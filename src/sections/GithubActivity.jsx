@@ -25,7 +25,7 @@ export const GithubActivity = () => {
         </h2>
         <ScrollReveal>
 
-        <div className="mt-10 glass rounded-3xl p-6 glow-border overflow-x-auto">
+        <div className="mt-10 glass rounded-3xl p-6 glow-border overflow-x-auto inline-block">
           <div className="flex justify-center">
             <GitHubCalendar
               username="akinnisten"
@@ -36,6 +36,7 @@ export const GithubActivity = () => {
               labels={{
                 totalCount: "{{count}} contributions in the last year",
               }}
+              transformData={(data) => data.slice(26 * 7)}
             />
           </div>
         </div>

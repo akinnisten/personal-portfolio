@@ -117,9 +117,9 @@ export const Contact = () => {
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-foreground">
                         <ScrollReveal>
-                        Let's build
+                        Let's build something
                         <span className="font-serif italic font-normal text-foreground">
-                            {" "} something great.</span>
+                            {" "} great.</span>
                         </ScrollReveal>
                     </h2>
                     <ScrollReveal>
@@ -146,7 +146,7 @@ export const Contact = () => {
                                     id="name"
                                     type="text"
                                     required
-                                    placeholder="Enter name... (or just type something lol)"
+                                    placeholder="Enter name..."
                                     value={formData.name}
                                     onChange={(e) =>
                                         setFormData({ ...formData, name: e.target.value })
