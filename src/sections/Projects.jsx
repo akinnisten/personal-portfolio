@@ -83,7 +83,7 @@ export const Projects = () => {
                                                 <h3 className="text-2xl font-bold leading-tight">
                                                     {project.title}
                                                 </h3>
-                                                <p className="text-sm text-primary mt-1">
+                                                <p className="text-sm mt-1 text-secondary-foreground">
                                                     {project.date}
                                                 </p>
                                             </div>
@@ -144,13 +144,11 @@ export const Projects = () => {
                                 <div className="flex items-start justify-between gap-4">
                                     <div>
                                         <p
-                                            className={`text-sm font-medium transition-colors ${
-                                                selected === idx ? "text-primary" : "text-white/75"
-                                            }`}
+                                            className="text-md font-medium transition-colors text-secondary-foreground"
                                         >
                                             {p.title}
                                         </p>
-                                        <p className="text-xs text-muted-foreground mt-1">
+                                        <p className="text-sm text-muted-foreground mt-1">
                                             {p.date} • {p.tags.slice(0, 2).join(" • ")}
                                         </p>
                                     </div>

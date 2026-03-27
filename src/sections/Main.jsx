@@ -103,7 +103,7 @@ export const Main = () => {
                         <h1 className="text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in animation-delay-2400">
                             Aidan Kinnisten
                         </h1>
-                        <h2 className="text-3xl font-semibold text-primary min-h-[1.2em] animate-fade-in animation-delay-2400">
+                        <h2 className="text-3xl font-semibold text-secondary-foreground min-h-[1.2em] animate-fade-in animation-delay-2400">
                             {typedRole}<span className="cursor">|</span>
                         </h2>
                         <p className="text-base text-muted-foreground max-w-xl leading-relaxed animate-fade-in animation-delay-3000">
