@@ -8,7 +8,7 @@ const socialLinks = [
 const footerLinks = [
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
-    { href: "#experiences", label: "Experience" },
+    { href: "#experience", label: "Experience" },
     { href: "#contact", label: "Contact" },
 ]
 
@@ -16,13 +16,15 @@ export const Footer = () => {
     const currentYear = new Date().getFullYear(); 
 
     return (
-        <footer className="py-12 border-t border-border">
-            <div className="container mx-auto px-6">
+        <footer className="py-12 border-border">
+            <div className="container mx-auto px-15">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                     { /* Logo/Copyright */ }
                     <div className="text-center md:text-left">
                         <a href="#" className="text-xl font-bold tracking-tight">
-                            AK<span className="text-primary">.</span>
+                            <span className="text-secondary-foreground"> { "<" }</span>
+                            <span className="text-color-background"> { "AK \u00A0" }</span>
+                            <span className="text-secondary-foreground"> { " / >" }</span>
                         </a>
                         <p className="text-sm text-muted-foreground mt-2">
                             © {currentYear} Aidan Kinnisten. All rights reserved.

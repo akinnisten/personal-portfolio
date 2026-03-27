@@ -1,11 +1,12 @@
 import { Code2, Lightbulb, MonitorCog, Users } from "lucide-react";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { useMemo } from "react";
 
 const highlights = [
     {
         icon: Code2,
         title: "Full Stack Work",
-        description: "Understanding the integration between front and back-end systems, building scable and responsive applications.",
+        description: "Understanding the integration between front and back-end systems, building scalable and responsive applications.",
     },
     {
         icon: MonitorCog,
@@ -22,85 +23,106 @@ const highlights = [
         title: "Self-Driven",
         description: "Continuously expanding my skills and frameworks by building projects, and applying concepts beyond the classroom.",
     },
-]
+];
 
 export const About = () => {
+    const dots = useMemo(() =>
+        [...Array(20)].map((_, i) => ({
+            id: i,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            duration: `${15 + Math.random() * 20}s`,
+            delay: `${Math.random() * 5}s`,
+        })),
+    []);
+
     return (
         <section id="about" className="py-32 relative overflow-hidden">
 
-                { /* Purple Dots Dots */}
+            {/* Purple Dots */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(30)].map((_, i) => (
-                    <div 
-                        
-                        className="absolute w-1.5 h-1.5 rounded-full opacity-60" 
+                {dots.map((dot) => (
+                    <div
+                        key={dot.id}
+                        className="absolute w-1.5 h-1.5 rounded-full opacity-60"
                         style={{
                             backgroundColor: "#DDB8FF",
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animation: `slow-drift ${
-                                15 + Math.random() * 20
-                            }s ease-in-out infinite`,
-                            animationDelay: `${Math.random() * 5}s`
+                            left: dot.left,
+                            top: dot.top,
+                            animation: `slow-drift ${dot.duration} ease-in-out infinite`,
+                            animationDelay: dot.delay,
                         }}
                     />
                 ))}
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    { /* Left Column */}
-                    <div className="space-y-8">
-                        <div className="animate-fade-in animation-delay-200">
-                            <ScrollReveal>
-                            <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
-                                About Me
-                            </span>
-                            </ScrollReveal>
-                        </div>
-                        <ScrollReveal>
-                        <h2 className="text-4xl font-bold mt-4">
-                            Computer Science @ Purdue
-                            </h2>
-                        </ScrollReveal>
-                        <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
-                            <ScrollReveal>
-                            <p>
-                                Some of my technical skills and what I offer.
-                            </p>
-                            </ScrollReveal>
-                        </div>
-                        <ScrollReveal>
-                        <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-                            <p className="text-lg font-medium italic text-foreground">
-                                Driven computer science major with an interest in software engineering, 
-                                machine learning, and cyber security. I am actively looking for an internship either 
-                                in a remote setting or areas near Columbus, OH to apply my technical and 
-                                creative skills in order to gain valuable information regarding the tech industry. 
-                                I hope to create solutions to real-world problems, develop projects, and work with 
-                                experienced professionals to enhance my technical skills. I aim to bring enthusiasm 
-                                and adaptability to any team. 
-                            </p>
-                        </div>
-                        </ScrollReveal>
+
+                {/* Section Header */}
+                <ScrollReveal>
+                    <div className="flex items-center gap-4 mb-4">
+                        <span className="text-primary text-md font-mono">01.</span>
+                        <h2 className="text-3xl font-bold">ABOUT ME</h2>
+                        <div className="flex-1 h-px bg-border" />
                     </div>
-                    {/* Right Column - Highlights */}
-                    <div className="grid sm:grid-cols-2 gap-6">
-                        {highlights.map((item, idx) => (
-                            <ScrollReveal key={idx} className="duration-1500">
-                            <div 
-                                className="glass p-6 rounded-2xl animate-fade-in"
-                                style={{animationDelay: `${(idx +1) * 100}ms`}}
-                            >
-                                <div className="w-12 h-12 rounded-xl bg-primary-/10 flex items-center justify-center mb-4 hover:bg-primary/20">
-                                    <item.icon className="w-6 h-6 text-primary"/>
-                                </div>
-                                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                                <p className="text-sm text-muted-foreground">{item.description}</p>
+                </ScrollReveal>
+
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                    {/* Left Column - 4 Panels */}
+                    <div className="grid sm:grid-cols-2 gap-4">
+
+                        {/* Gray paragraph text below panels */}
+                        <ScrollReveal className="sm:col-span-2">
+                            <div className="mt-2">
+                                <p className="text-base text-muted-foreground leading-relaxed">
+                                    Driven computer science major with an interest in software engineering,
+                                    machine learning, and cyber security. Actively looking for an internship
+                                    near Columbus, OH or remote. I aim to bring enthusiasm and adaptability to any team.
+                                </p>
                             </div>
+                        </ScrollReveal>
+                        
+                        {highlights.map((item, idx) => (
+                            <ScrollReveal key={idx}>
+                                <div
+                                    className="glass p-5 rounded-2xl"
+                                    style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+                                >
+                                    <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3">
+                                        <item.icon className="w-5 h-5 text-primary" />
+                                    </div>
+                                    <h3 className="text-md font-semibold mb-1">{item.title}</h3>
+                                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                                </div>
                             </ScrollReveal>
                         ))}
+
                     </div>
+
+                    {/* Right Column - Photo */}
+                    <ScrollReveal>
+                        <div className="relative max-w-md mx-auto">
+                            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
+                            <div className="relative glass rounded-3xl p-2 glow-border">
+                                <img
+                                    src="/akinn.jpg"
+                                    alt="Aidan Kinnisten"
+                                    className="w-full aspect-[4.4/5] object-cover rounded-2xl"
+                                />
+                                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                                        <span className="text-sm font-medium">Available for work</span>
+                                    </div>
+                                </div>
+                                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                                    <div className="text-xl font-bold text-primary">Aidan Kinnisten</div>
+                                    <div className="text-sm text-muted-foreground">CS Student at Purdue University</div>
+                                </div>
+                            </div>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </div>
         </section>

@@ -102,6 +102,14 @@
     }
   }
 
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .cursor {
+    animation: blink 0.7s ease-in-out infinite;
+  }
+
   @keyframes slow-drift {
     0%,
     100% {
@@ -217,17 +225,8 @@
     animation-delay: 3800ms;
   }
 
-  @keyframes animated-border {
-    0% {
-      stroke-dashoffset: 400;
-    }
-    100% {
-      stroke-dashoffset: -550;
-    }
-  }
-
   .group:hover .animated-border-path {
-    animation: animated-border 1.5s linear infinite;
+    animation: animated-border 0.6s linear forwards;
   }
 
   .animated-border:hover {
