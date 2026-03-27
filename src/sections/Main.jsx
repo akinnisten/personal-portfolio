@@ -3,7 +3,7 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { useState, useEffect, useMemo } from "react";
 
 const roles = ["Computer Science Student", "Full Stack Developer",
-               "Tech Enthuisast", "Team Collaborator", "Passionate Learner"
+               "Tech Enthuisast", "Team Collaborator" 
 ];
 
 const skills = [
@@ -107,7 +107,7 @@ export const Main = () => {
                             {typedRole}<span className="cursor">|</span>
                         </h2>
                         <p className="text-base text-muted-foreground max-w-xl leading-relaxed animate-fade-in animation-delay-3000">
-                            I'm currently a freshman at Purdue University. I'm passionate about Machine Learning, and have been immersed in technology since the age of five. Check out what I'm about below.
+                            I'm a current student at Purdue University. Since the age of five, I've been immersed into the world of technology. I love to build, learn, and explore. 
                         </p>
                     </div>
 
@@ -139,7 +139,7 @@ export const Main = () => {
                     <div className="animate-fade-in animation-delay-3500">
                         <div onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
                             <AnimatedBorderButton size="md" className="cursor-pointer">
-                                Explore my work <ArrowDown className="w-5 h-5" />
+                                Continue Reading <ArrowDown className="w-5 h-5" />
                             </AnimatedBorderButton>
                         </div>
                     </div>
