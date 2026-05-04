@@ -74,7 +74,7 @@ export const About = () => {
 
                         <ScrollReveal className="sm:col-span-2">
                             <p className="text-base text-muted-foreground leading-relaxed">
-                                I'm currently a CS major, with a minor in Finance @ Purdue University.<br/>
+                                I'm currently a CS major, with a minor in Finance @ Purdue University. 
                             </p>
                             <p className="text-base text-muted-foreground leading-relaxed">
                                 I'm a driven computer science student focused on machine learning, but also software engineering and a little bit of cybersecurity.

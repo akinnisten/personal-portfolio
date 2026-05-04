@@ -2,6 +2,14 @@ import { ScrollReveal } from "../components/ScrollReveal";
 
 const experiences = [
     {
+        title: "Business Intelligence & Innovation Intern",
+        company: "Found Search Marketing",
+        date: "May 2026 - Aug. 2026",
+        description:
+            "Incoming for Summer 2026",
+        tags: ["Data Analytics", "AI Workflows"],
+    },
+    {
         title: "Roblox Game Developer",
         company: "Independent Project",
         date: "2020 — 2025",
