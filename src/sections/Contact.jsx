@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Mail, MapPin, Send } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Send } from "lucide-react";
 import { ScrollReveal } from "../components/ScrollReveal";
 import emailjs from "@emailjs/browser";
 
@@ -33,16 +33,16 @@ export const Contact = () => {
 
                 <ScrollReveal>
                     <div className="flex items-center gap-4 mb-16">
-                        <span className="text-primary text-sm font-mono">04.</span>
+                        <span className="section-kicker">04.</span>
                         <h2 className="text-3xl font-bold">CONTACT</h2>
                         <div className="flex-1 h-px bg-white/10" />
                     </div>
                 </ScrollReveal>
 
-                <div className="grid lg:grid-cols-2 gap-10">
+                <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-start">
 
                     <ScrollReveal>
-                        <div className="glass p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-all">
+                        <div className="glass p-7 rounded-lg border border-white/5 hover:border-primary/30 transition-all">
                             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
 
                                 {[{ label: "Name", type: "text", name: "name" },
@@ -54,7 +54,7 @@ export const Contact = () => {
                                             name={name}
                                             placeholder={`Enter ${label.toLowerCase()}...`}
                                             required
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm 
+                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm 
                                             focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all"
                                         />
                                     </div>
@@ -67,7 +67,7 @@ export const Contact = () => {
                                         rows="4"
                                         placeholder="Your message..."
                                         required
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm 
+                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm 
                                         focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all resize-none"
                                     />
                                 </div>
@@ -83,8 +83,8 @@ export const Contact = () => {
                                 <button
                                     type="submit"
                                     disabled={status === "sending"}
-                                    className="w-full bg-gradient-to-r from-primary to-purple-600 
-                                    hover:opacity-90 disabled:opacity-50 text-white font-medium py-3 rounded-xl 
+                                    className="w-full bg-primary 
+                                    hover:opacity-90 disabled:opacity-50 text-background font-semibold py-3 rounded-lg 
                                     flex items-center justify-center gap-2 transition-all
                                     shadow-lg shadow-primary/20 hover:shadow-primary/40"
                                 >
@@ -95,33 +95,39 @@ export const Contact = () => {
                         </div>
                     </ScrollReveal>
 
-                    {/* INFO — unchanged */}
-                    <div className="space-y-6">
+                    <div className="space-y-7">
                         <ScrollReveal>
-                            <div className="glass p-6 rounded-2xl border border-white/5 hover:border-primary/20 transition-all group hover:-translate-y-1">
-                                <h3 className="text-lg font-bold mb-6">Contact Info</h3>
-                                <div className="space-y-6">
-                                    {[{ icon: Mail, label: "Email", value: "aidankinnisten@gmail.com" },
-                                      { icon: MapPin, label: "Location", value: "Columbus, OH" }
-                                    ].map(({ icon: Icon, label, value }) => (
-                                        <div key={label} className="flex items-center gap-4">
-                                            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center 
-                                            text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all">
-                                                <Icon className="w-4 h-4" />
-                                            </div>
-                                            <div>
-                                                <p className="text-xs text-muted-foreground">{label}</p>
-                                                <p className="text-sm">{value}</p>
-                                            </div>
-                                        </div>
-                                    ))}
+                            <div className="pt-2">
+                                <p className="section-kicker mb-5">Let's Work Together</p>
+                                <h3 className="max-w-lg text-3xl font-bold leading-tight md:text-3xl">
+                                    Have an idea, role, or project worth talking through?
+                                </h3>
+                                <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">
+                                    Talk to me about anything. Whether it's a question or you want to collaborate, I'm open to anything! I respond fairly quickly.
+                                </p>
+
+                                <div className="mt-8 space-y-4">
+                                    <a
+                                        href="mailto:aidankinnisten@gmail.com"
+                                        className="group flex items-center justify-between border-b border-border/80 pb-4 text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
+                                    >
+                                        <span className="flex items-center gap-3">
+                                            <Mail className="h-4 w-4 text-primary" />
+                                            aidankinnisten@gmail.com
+                                        </span>
+                                        <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                    </a>
+
+                                    <div className="flex items-center gap-3 border-b border-border/80 pb-4 text-muted-foreground">
+                                        <MapPin className="h-4 w-4 text-primary" />
+                                        Columbus, OH
+                                    </div>
                                 </div>
                             </div>
                         </ScrollReveal>
 
                         <ScrollReveal>
-                            <div className="glass p-6 rounded-2xl border border-primary/20 bg-primary/5 
-                            hover:shadow-lg hover:shadow-primary/20 transition-all">
+                            <div className="rounded-lg border border-primary/20 bg-primary/5 p-5 transition-all hover:border-primary/40">
                                 <div className="flex items-center gap-2 mb-3">
                                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                                     <h3 className="text-sm font-medium">Available for Opportunities</h3>

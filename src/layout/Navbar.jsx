@@ -1,4 +1,3 @@
-import { Button } from "@/components/Button";
 import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { useState, useEffect } from "react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
@@ -13,19 +12,61 @@ const navLinks = [
 export const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState("");
     const [theme, setTheme] = useState("dark");
 
     const toggleTheme = () => {
         const isLight = document.documentElement.classList.toggle("light");
-        setTheme(isLight ? "light" : "dark");
+        const nextTheme = isLight ? "light" : "dark";
+        setTheme(nextTheme);
+        localStorage.setItem("theme", nextTheme);
     };
 
     useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") {
+            document.documentElement.classList.add("light");
+            setTheme("light");
+        }
+
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const updateActiveSection = () => {
+            const marker = window.innerHeight * 0.42;
+            let current = "";
+
+            for (const link of navLinks) {
+                const section = document.getElementById(link.href);
+                if (!section) continue;
+
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= marker && rect.bottom > marker) {
+                    current = link.href;
+                    break;
+                }
+
+                if (rect.top <= marker) {
+                    current = link.href;
+                }
+            }
+
+            setActiveSection(current);
+        };
+
+        updateActiveSection();
+        window.addEventListener("scroll", updateActiveSection, { passive: true });
+        window.addEventListener("resize", updateActiveSection);
+
+        return () => {
+            window.removeEventListener("scroll", updateActiveSection);
+            window.removeEventListener("resize", updateActiveSection);
+        };
     }, []);
 
     useEffect(() => {
@@ -69,11 +110,11 @@ export const Navbar = () => {
                     {/* Logo */}
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className="text-xl font-bold tracking-tight hover:text-primary transition-colors group cursor-pointer"
+                        className="group flex items-center gap-2 font-mono text-sm font-black tracking-tight text-foreground transition-colors hover:text-primary"
                     >
-                        <span className="text-primary group-hover:text-white transition-colors">{"<"}</span>
-                        <span className="text-foreground">{" AK "}</span>
-                        <span className="text-primary group-hover:text-white transition-colors">{" />"}</span>
+                        <span className="grid h-9 min-w-16 place-items-center rounded-lg border border-primary/40 bg-primary/10 px-3 text-primary transition-colors group-hover:bg-primary group-hover:text-background">
+                            {"< AK />"}
+                        </span>
                     </button>
 
                     {/* Desktop Nav Links */}
@@ -82,14 +123,25 @@ export const Navbar = () => {
                             <button
                                 key={link.href}
                                 onClick={() => scrollTo(link.href)}
-                                className="transition-all duration-300 cursor-pointer group flex items-center gap-1.5"
+                                className={`transition-all duration-300 cursor-pointer group flex items-center gap-1.5 ${
+                                    activeSection === link.href ? "text-primary" : ""
+                                }`}
                             >
-                                <span className="text-primary font-mono text-xs">
+                                <span className={`font-mono text-xs transition-colors ${
+                                    activeSection === link.href ? "text-primary" : "text-primary/80"
+                                }`}>
                                     {link.number}
                                 </span>
-                                <span className="text-sm text-muted-foreground group-hover:text-white transition-colors">
+                                <span className={`text-sm transition-colors group-hover:text-white ${
+                                    activeSection === link.href ? "text-foreground" : "text-muted-foreground"
+                                }`}>
                                     {link.label}
                                 </span>
+                                <span
+                                    className={`h-1.5 w-1.5 rounded-full bg-primary transition-all ${
+                                        activeSection === link.href ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                                    }`}
+                                />
                             </button>
                         ))}
                     </div>

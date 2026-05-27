@@ -1,9 +1,9 @@
 import { ArrowDown, ChevronDown, LucideLinkedin, LucideGithub } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 
 const roles = ["Computer Science Student", "Full Stack Developer",
-               "Tech Enthuisast", "Team Collaborator" 
+               "Tech Enthusiast", "Team Collaborator" 
 ];
 
 const skills = [
@@ -61,58 +61,36 @@ const useTypewriter = (words, startDelay = 0) => {
 export const Main = () => {
     const typedRole = useTypewriter(roles, 2400);
 
-    const dots = useMemo(() =>
-        [...Array(30)].map((_, i) => ({
-            id: i,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            duration: `${15 + Math.random() * 20}s`,
-            delay: `${Math.random() * 5}s`,
-        })),
-    []);
-
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden">
             <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+                <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/20 to-background/10" />
+                <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background/20" />
             </div>
 
-            {/* Purple Dots */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {dots.map((dot) => (
-                    <div
-                        key={dot.id}
-                        className="absolute w-1.5 h-1.5 rounded-full opacity-60"
-                        style={{
-                            backgroundColor: "#DDB8FF",
-                            left: dot.left,
-                            top: dot.top,
-                            animation: `slow-drift ${dot.duration} ease-in-out infinite`,
-                            animationDelay: dot.delay,
-                        }}
-                    />
-                ))}
-            </div>
-
-            <div className="container mx-auto px-6 pt-32 pb-20 relative z-10 max-w-4xl">
-                <div className="flex flex-col text-left space-y-6">
+            <div className="container mx-auto px-6 pt-32 pb-20 relative z-10 max-w-5xl">
+                <div className="flex flex-col text-left space-y-7">
                     <div className="space-y-4">
-                        <p className="text-sm uppercase tracking-widest text-muted-foreground animate-fade-in animation-delay-1600">
+                        <p className="section-kicker animate-fade-in animation-delay-1600">
                             Hello, my name is
                         </p>
-                        <h1 className="text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in animation-delay-2400">
-                            Aidan Kinnisten
+                        <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-foreground leading-[0.95] animate-intro-pop animation-delay-2400">
+                            Aidan <span className="sketch-underline">Kinnisten</span>
                         </h1>
-                        <h2 className="text-3xl font-semibold text-secondary-foreground min-h-[1.2em] animate-fade-in animation-delay-2400">
+                        <h2 className="text-2xl sm:text-3xl font-semibold text-secondary-foreground min-h-[1.2em] animate-fade-in animation-delay-2400">
                             {typedRole}<span className="cursor">|</span>
                         </h2>
-                        <p className="text-base text-muted-foreground max-w-xl leading-relaxed animate-fade-in animation-delay-3000">
-                            I'm a current student at Purdue University. Since the age of five, I've been immersed into the world of technology. I love to build, learn, and explore. 
+                        <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-in animation-delay-3000">
+                            I'm a current student at Purdue University. Since the age of five, I've been immersed into the world of technology. I love to build, learn, and explore.
+
+                        </p>
+                        <p className="w-fit rounded-lg border border-primary/20 bg-primary/10 px-4 py-2 text-sm text-muted-foreground animate-fade-in animation-delay-3200">
+                            I currently am working at my internship at Found, while also working on my next project!
                         </p>
                     </div>
 
                     {/* Social Links */}
-                    <div className="flex items-center gap-6 animate-fade-in animation-delay-3500">
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-3 animate-fade-in animation-delay-3500">
                         <a
                             href="https://www.linkedin.com/in/aidan-kinnisten-773022385/"
                             target="_blank"
@@ -122,7 +100,7 @@ export const Main = () => {
                             <LucideLinkedin className="w-4 h-4" />
                             LinkedIn
                         </a>
-                        <span className="text-border">|</span>
+                        <span className="text-border">/</span>
                         
                         <a
                             href="https://github.com/akinnisten"
@@ -147,11 +125,11 @@ export const Main = () => {
 
                 {/* Skills Marquee */}
                 <div className="mt-16 animate-fade-in animation-delay-3800">
-                    <div className="relative overflow-hidden">
+                    <div className="relative overflow-hidden border-y border-border/60 py-4">
                         <div className="flex animate-marquee">
                             {[...skills, ...skills].map((skill, idx) => (
-                                <div key={idx} className="flex-shrink-0 px-8">
-                                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                                <div key={idx} className="flex-shrink-0 px-7">
+                                    <span className="text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground/70 hover:text-secondary-foreground transition-colors">
                                         {skill}
                                     </span>
                                 </div>

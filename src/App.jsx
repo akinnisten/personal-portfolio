@@ -10,6 +10,16 @@ import { Footer } from "./layout/Footer";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { CursorGlow } from "@/components/CursorGlow";
 
+const backgroundDots = [...Array(42)].map((_, i) => ({
+  id: i,
+  left: `${(i * 23 + 7) % 100}%`,
+  top: `${(i * 31 + 13) % 100}%`,
+  size: `${5 + (i % 3) * 1.5}px`,
+  opacity: 0.22 + (i % 4) * 0.08,
+  delay: `${(i % 9) * 0.45}s`,
+  duration: `${18 + (i % 7) * 3}s`,
+}));
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -29,6 +39,22 @@ function App() {
       }`}
     >
       <CursorGlow />
+      <div className="site-sparks" aria-hidden="true">
+        {backgroundDots.map((dot) => (
+          <span
+            key={dot.id}
+            style={{
+              left: dot.left,
+              top: dot.top,
+              width: dot.size,
+              height: dot.size,
+              opacity: dot.opacity,
+              animationDelay: dot.delay,
+              animationDuration: dot.duration,
+            }}
+          />
+        ))}
+      </div>
       <Navbar />
 
       {/* Social sidebar left */}
@@ -54,7 +80,7 @@ function App() {
         <div className="w-px h-20 bg-muted-foreground opacity-60" />
       </div>
 
-      <main className="px-10">
+      <main className="relative z-10">
         <Main />
         <About />
         <Projects />

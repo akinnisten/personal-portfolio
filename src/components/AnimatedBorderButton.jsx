@@ -10,9 +10,9 @@ export const AnimatedBorderButton = ({ children, className = "", size = "md" }) 
             className={`relative bg-transparent border border-secondary-foreground text-secondary-foreground
                 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary 
                 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed 
-                rounded-full cursor-pointer font-medium
+                rounded-lg cursor-pointer font-medium
                 transition-all duration-300
-                hover:border-primary hover:shadow-[0_0_12px_2px_var(--color-primary)] 
+                hover:border-primary hover:bg-primary/10 hover:text-primary hover:shadow-lg hover:shadow-primary/30 
                 ${sizeClasses[size]} ${className}`}
         >
             <span className="relative z-10 flex items-center justify-center gap-2">

@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #07050F;
-  --color-foreground: #ECE9FF;
+  --color-background: #0d0d0b;
+  --color-foreground: #f4efe4;
 
-  --color-card: #141a1f;
+  --color-card: #181713;
 
-  --color-primary: #8B5CF6;
-  --color-primary-foreground: #F5F3FF;
+  --color-primary: #ff6b4a;
+  --color-primary-foreground: #fff8ef;
 
-  --color-secondary: #1f2830;
-  --color-secondary-foreground: #A78BFA;
+  --color-secondary: #23211b;
+  --color-secondary-foreground: #e6a06f;
 
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
+  --color-muted: #25231d;
+  --color-muted-foreground: #a8a092;
 
-  --color-border: #242b32;
+  --color-border: #363226;
 
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 
-  --color-highlight: #f5a623;
-  --color-surface: #1a2329;
+  --color-highlight: #f0c45c;
+  --color-surface: #171610;
 }
 
 @layer base {
@@ -35,44 +35,68 @@
     font-family: "Inter", sans-serif;
   }
 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+      linear-gradient(color-mix(in srgb, var(--color-foreground) 5%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--color-foreground) 5%, transparent) 1px, transparent 1px),
+      radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent 28rem),
+      radial-gradient(circle at 84% 10%, color-mix(in srgb, var(--color-secondary-foreground) 13%, transparent), transparent 25rem),
+      var(--color-background);
+    background-size: 44px 44px, 44px 44px, auto, auto, auto;
+  }
+
+  @media (pointer: fine) and (min-width: 768px) {
+    *,
+    *::before,
+    *::after {
+      cursor: none !important;
+    }
+  }
+
   .font-serif {
     font-family: "Playfair Display", serif;
   }
 
   html.light {
-    --color-background: #f7f5ff;
-    --color-foreground: #161321;
+    --color-background: #f7f1e6;
+    --color-foreground: #1f1b14;
 
-    --color-card: #ffffff;
+    --color-card: #fffaf1;
 
-    --color-primary: #7c3aed;
+    --color-primary: #d94b2b;
     --color-primary-foreground: #ffffff;
 
-    --color-secondary: #ebe5ff;
-    --color-secondary-foreground: #000000;
+    --color-secondary: #efe3d0;
+    --color-secondary-foreground: #a45c34;
 
-    --color-muted: #f1edf9;
-    --color-muted-foreground: #141414;
+    --color-muted: #ece1d0;
+    --color-muted-foreground: #625a4d;
 
-    --color-border: #ddd6fe;
+    --color-border: #d6c7b2;
 
-    --color-highlight: #d97706;
-    --color-surface: #ffffff;
+    --color-highlight: #a77705;
+    --color-surface: #fff8ed;
   }
 
 }
 
 @layer components {
   .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
-    backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 72%, transparent);
+    backdrop-filter: blur(18px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    box-shadow: 0 18px 50px color-mix(in srgb, #000 26%, transparent);
   }
 
   .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
     backdrop-filter: blur(24px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
   }
 
   .glow-text {
@@ -84,6 +108,36 @@
     box-shadow: 0 0 20px
         color-mix(in srgb, var(--color-primary) 25%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent),
+  }
+
+  .section-kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-secondary-foreground);
+  }
+
+  .sketch-underline {
+    background-image: radial-gradient(circle, color-mix(in srgb, var(--color-highlight) 95%, transparent) 0 38%, transparent 40%);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 0.08em;
+  }
+
+  .site-sparks {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .site-sparks span {
+    position: absolute;
+    border-radius: 999px;
+    background: var(--color-highlight);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--color-primary) 55%, transparent);
+    animation: spark-drift 24s ease-in-out infinite;
   }
 }
 
@@ -98,6 +152,24 @@
     to {
       opacity: 1;
       transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes intro-pop {
+    0% {
+      opacity: 0;
+      transform: translateY(12px) scale(0.94) rotate(-2deg);
+      filter: blur(12px);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(0) scale(1.02) rotate(0);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0);
       filter: blur(0);
     }
   }
@@ -123,6 +195,28 @@
     }
     75% {
       transform: translate(30px, 10px);
+    }
+  }
+
+  @keyframes spark-drift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    33% {
+      transform: translate3d(18px, -24px, 0);
+    }
+    66% {
+      transform: translate3d(-16px, 18px, 0);
+    }
+  }
+
+  @keyframes dash-slide {
+    0% {
+      transform: translateX(-20%);
+    }
+    100% {
+      transform: translateX(20%);
     }
   }
 
@@ -155,6 +249,10 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+  }
+
+  .animate-intro-pop {
+    animation: intro-pop 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
   .animation-delay-100 {
@@ -230,9 +328,9 @@
   }
 
   .animated-border:hover {
-    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    background-color: color-mix(in srgb, var(--color-secondary-foreground) 15%, transparent);
     backdrop-filter: blur(16px);
-    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent)
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-secondary-foreground) 20%, transparent)
   }
 
   .loader-lines {
@@ -249,6 +347,7 @@
   background: linear-gradient(
     90deg,
     transparent,
+    var(--color-highlight),
     var(--color-primary),
     transparent
   );
