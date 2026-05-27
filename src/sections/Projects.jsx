@@ -18,7 +18,7 @@ const projects = [
         description:
             "Designed a movie theater reservation service that allowed people to reserve available seats from a variety of movies.",
         visual: "seat-map",
-        tags: ["Java", "UI", "Object-Oriented"],
+        tags: ["Java", "Linux", "Object-Oriented", "UI/UX Design"],
         link: "https://youtu.be/VkH4oKE1S_I",
         linkLabel: "Watch Demo",
     },
@@ -28,7 +28,7 @@ const projects = [
         description:
             "Created a fictional company with a group of five, NetLink, that incorporated topologies, documentation, and pricing.",
         image: "/Picture1.png",
-        tags: ["PuTTy", "Collaboration", "TCP/IP Protocols", "VMWare"],
+        tags: ["PuTTy", "TCP/IP Protocols", "VMWare"],
         link: "https://docs.google.com/document/d/1H8KvXB02C2DRoeBA4mo48ivQSoQQ25Om/preview",
         linkLabel: "View Docs",
         objectFit: "contain",
