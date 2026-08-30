@@ -156,7 +156,7 @@ export const Navbar = () => {
                             {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
                         </button>
 
-                        <a href="/aidan_kinnisten_website_resume.pdf" download className="block">
+                        <a href="/aidan_kinnisten_website_resumee.pdf" download className="block">
                             <AnimatedBorderButton size="sm" className="px-5">
                                 Resume
                                 <Download className="w-3.5 h-3.5" />

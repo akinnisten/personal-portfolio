@@ -85,7 +85,7 @@ export const Main = () => {
 
                         </p>
                         <p className="w-fit rounded-lg border border-primary/20 bg-primary/10 px-4 py-2 text-sm text-muted-foreground animate-fade-in animation-delay-3200">
-                            I currently am working at my internship at Found, while also working on my next project!
+                            I recently started my sophomore year at Purdue!
                         </p>
                     </div>
 

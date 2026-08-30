@@ -6,12 +6,12 @@ const experiences = [
         company: "Found Search Marketing",
         date: "May 2026 - Aug. 2026",
         description:
-            "Incoming for Summer 2026",
+            "",
         bullets: [
-            "Incoming for Summer 2026, focused on business intelligence, innovation, and AI-assisted workflows.",
-            "Collaborating with employees to identify operational concerns, developing practical automation-based solutions",
+            "Built and implemented AI-driven workflow solutions, automating repetive manual tasks and supporting productivity.",
+            "Designed 5 different projects, including a query optimizer, pixel audit checker, Slack-Instantly bot, and more!",
         ],
-        tags: ["Data Analytics", "AI Workflows"],
+        tags: ["Data Analytics", "AI Workflows", "Python"],
     },
     {
         title: "Roblox Game Developer",

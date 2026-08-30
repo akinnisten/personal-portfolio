@@ -64,11 +64,11 @@ export const About = () => {
                     </div>
                 </ScrollReveal>
 
-                <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-start">
+                 <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-start">
 
                     <ScrollReveal className="lg:pt-3">
                         <div className="text-center">
-                            <p className="section-kicker mb-5 text-center">Currently</p>
+                            <p className="section-kicker mb-5 text-center"></p>
                             <div className="mx-auto max-w-xl space-y-6 text-lg leading-9 text-muted-foreground lg:text-xl lg:leading-10">
                                 <p>
                                     I'm a current CS major, focused on machine intelligence. I also have a minor in Finance @ Purdue University. 
